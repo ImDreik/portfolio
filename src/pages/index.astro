@@ -6,52 +6,42 @@ import SocialPill from '../components/SocialPill.astro';
 import SectionContainer from '../components/SectionContainer.astro';
 import Experience from '../components/Experience.astro';
 
-import GitHubIcon from '../icons/GitHub.astro';
+import GitHub from '../icons/GitHub.astro';
 import LinkedInIcon from '../icons/LinkedIn.astro';
 import MailIcon from '../icons/Mail.astro';
 import Download from '../icons/Download.astro';
 import Briefcase from '../icons/Briefcase.astro';
+import CodeIcon from '../icons/Code.astro';
+import Projects from '../components/Projects.astro';
 ---
 
 <Layout title="Portfolio de Carlos | Desarrollador y Programador Web">
-	<main>
-		<SectionContainer>
+	<main class="px-4">
+		<SectionContainer id="" className="py-44 pb-24">
 			<img
 				class="rounded-full size-20 mb-4"
 				src="https://img.freepik.com/free-psd/engraved-black-logo-mockup_125540-223.jpg?w=740&t=st=1711208139~exp=1711208739~hmac=329b75049097615d8816aa2e8acb879953befda768db59eddd0e5367d01faecb"
 				alt="Me foto"
 			/>
 			<h1
-				class="text-withe text-5xl font-bold flex justify-left flex-row gap-x-4 pb-10"
+				class="text-withe text-3xl md:text-4xl lg:text-5xl font-bold flex justify-left flex-row gap-x-4 pb-6 lg:pb-10"
 			>
 				Hey, soy Carlos Padilla
-				<a
-					href="#"
-					target="_blank"
-					rel="noopener"
-					class="flex justify-center items-center"
-				>
+				<a href="#" target="_blank" rel="noopener" class="flex justify-center items-center">
 					<Badge> Disponible para trabajar</Badge>
 				</a>
 			</h1>
-			<h2 class="text-2xl text-wrap">
-				<span class="text-yellow-200/90">
-					Estudiante universitario.
-				</span>
-				<span class=""
-					>Con grandes ansias de aprender cualquier tipo de
-					tecnología.</span
-				>
+			<h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
+				<span class="text-yellow-200/90"> Estudiante universitario. </span>
+				<span class="">Con grandes ansias de aprender cualquier tipo de tecnología.</span>
 				<span class="opacity-70"> Desarrollador web full stack.</span>
-				<span class="text-blue-500">
-					Santiago, República Dominicana.
-				</span>
+				<span class="text-blue-500"> Santiago, República Dominicana. </span>
 				<span class="">Especializado en backend.</span>
 			</h2>
 
-			<nav class="flex gap-x-4 mt-6">
+			<nav class="flex gap-4 mt-6 flex-wrap">
 				<SocialPill href="https://github.com/ImDreik">
-					<GitHubIcon class="size-6" />
+					<GitHub class="size-6" />
 					GitHub
 				</SocialPill>
 				<SocialPill href="#">
@@ -62,19 +52,27 @@ import Briefcase from '../icons/Briefcase.astro';
 					<Download />
 					Descargar cv
 				</SocialPill>
-				<SocialPill href="">
+				<SocialPill href="mailto:saul022188@gmail.com">
 					<MailIcon />
 					saul022188@gmail.com
 				</SocialPill>
 			</nav>
 		</SectionContainer>
 
-		<SectionContainer>
-			<h1 class="text-4xl font-bold flex flex-row items-center">
-				<Briefcase class="size-10 mr-4" />
-				Experience
-			</h1>
+		<SectionContainer id="experiencia" className="py-24">
+			<h2 class="text-2xl font-semibold mb-4 flex gap-x-2 items-center">
+				<Briefcase class="size-8" />
+				Experiencia
+			</h2>
 			<Experience />
+		</SectionContainer>
+
+		<SectionContainer id="proyectos" className="py-32">
+			<h2 class="text-2xl font-semibold mb-4 flex gap-x-2 items-center">
+				<CodeIcon class="size-8" />
+				Proyectos
+			</h2>
+			<Projects />
 		</SectionContainer>
 	</main>
 </Layout>

@@ -1,0 +1,71 @@
+---
+import GitHub from '../icons/GitHub.astro';
+import SocialPill from './SocialPill.astro';
+
+const TAGS = {
+	NEXT: {
+		name: 'Next.js',
+	},
+};
+
+const PROJECTS = [
+	{
+		title: 'Modelo Predictivo',
+		description:
+			'Este proyecto es un modelo predictivo de un proceso inteligente de un historial clinico echo con TensorFlow.js',
+		link: '#',
+		github: '#',
+		image: 'https://flowbite.com/docs/images/blog/image-1.jpg',
+		tags: ['HTML', 'CSS', 'JavaScript'],
+	},
+	{
+		title: 'Modelo Predictivo',
+		description:
+			'Este proyecto es un modelo predictivo de un proceso inteligente de un historial clinico echo con TensorFlow.js',
+		link: '#',
+		github: '#',
+		image: 'https://flowbite.com/docs/images/blog/image-1.jpg',
+		tags: ['HTML', 'CSS', 'JavaScript'],
+	},
+	{
+		title: 'Modelo Predictivo',
+		description:
+			'Este proyecto es un modelo predictivo de un proceso inteligente de un historial clinico echo con TensorFlow.js',
+		link: '#',
+		github: '#',
+		image: 'https://flowbite.com/docs/images/blog/image-1.jpg',
+		tags: ['HTML', 'CSS', 'JavaScript'],
+	},
+];
+---
+
+<div class="flex flex-wrap justify-start">
+	{
+		PROJECTS.map(({ title, description, link, github, image, tags }) => (
+			<div class="max-w-[348px] bg-transparent border border-gray-400 rounded-lg shadow dark:bg-gray-800 mb-8 mr-4">
+				<a href={link}>
+					<img class="rounded-t-lg" src={image} alt={`Screnshot del proyecto${title}`} />
+				</a>
+				<div class="p-5">
+					<a href={link}>
+						<h5 class="mb-2 text-2xl font-bold tracking-tight text-yellow-200 dark:text-white">
+							{title}
+						</h5>
+					</a>
+					<p class="mb-6 font-normal text-white opacity-80">{description}</p>
+
+					<ul class="mb-4">
+						{tags.map((t) => (
+							<li>{t}</li>
+						))}
+					</ul>
+
+					<SocialPill className="w-32" href={github}>
+						<GitHub class="size-6" />
+						GitHub
+					</SocialPill>
+				</div>
+			</div>
+		))
+	}
+</div>
